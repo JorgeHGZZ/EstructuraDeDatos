@@ -13,12 +13,10 @@ private:
 	int edadPaciente;
 	string primerMedico;
 public:
-	Paciente* Sig;
-	Paciente* Ant;
+	Paciente* Sig= NULL;
+	Paciente* Ant = NULL;
 	//Constructor
-	Paciente() {
-
-	}
+	Paciente() {}
 	Paciente(string _nombre, string _apellido, long long _telefono, string _referencia, int _fechaDN, int _edad, string _primermedico) {
 		nombrePaciente = _nombre;
 		apellidoPaciente = _apellido;

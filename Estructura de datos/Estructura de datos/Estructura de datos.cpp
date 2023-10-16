@@ -5,6 +5,7 @@
 #include<stdlib.h>
 #include"ListasDobles.h"
 #include"Pacientes.h"
+#include<string>
 
 using namespace std;
 /*HINSTANCE GINST;
@@ -30,29 +31,18 @@ INT_PTR InicioDeSesion(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     return FALSE;
 }*/
 
-struct paciente
-{
-	string nombrePaciente;
-	string apellidoPaciente;
-	long long telefonoPaciente;
-	string referencia;
-	int fechaDN;
-	int edadPaciente;
-	string primerMedico;
-}ax;
-
 
 	
 int main() {
-	ListaDoblementeLigada ListaP;
+	ListaDoblementeLigadaP ListaP;
 	int opcion;
 	do{
-		system("cls");
-		cout << "1.- Agregar Paciente\n2.-Mostrar Pacientes\n3.-Eliminar Paciente\n4.-Salir\n==========================\n";
+		cout << "1.-Agregar Paciente\n2.-Mostrar Pacientes\n3.-Buscar Paciente\n4.-Eliminar\n5.-Modificar\n6.-Salir\n==========================\n";
 		cin >> opcion;
 		switch (opcion)
 		{
 		case 1:;
+			system("cls");
 			cout << "Ingresa Nombre del paciente: " << endl;
 			cin >> ax.nombrePaciente;
 			cout << "Ingrese apellido del paciente: " << endl;
@@ -65,17 +55,29 @@ int main() {
 			cin >> ax.edadPaciente;
 			cout<<"Primer Medico que lo antendio: " << endl;
 			cin >> ax.primerMedico;
-			ListaP.agregarALista(ax.nombrePaciente, ax.apellidoPaciente, ax.telefonoPaciente, ax.referencia, 1208013, ax.edadPaciente, ax.primerMedico);
-			cout << "Aniadido con exito" << endl;
-			system("cls");
+			ListaP.agregarALista(ax.nombrePaciente, ax.apellidoPaciente, ax.telefonoPaciente, ax.referencia, 030702, ax.edadPaciente, ax.primerMedico);
 			break;
 		case 2:
-			ListaP.MostrarInicioFIN();
+			ListaP.mostrarLista();
 			system("PAUSE");
 			break;
+		case 3 :
+			cout << "Ingresa Telefno del paciente: " << endl;
+			cin >> ax.telefonoPaciente;
+			ListaP.buscarPaciente(ax.telefonoPaciente);
+			break;
+		case 4:
+			cout << "Ingresa Telefno del paciente: " << endl;
+			cin >> ax.telefonoPaciente;
+			ListaP.eliminarPaciente(ax.telefonoPaciente);
+			break;
+		case 5:
+			cout << "Ingresa Telefno del paciente: " << endl;
+			cin >> ax.telefonoPaciente;
+			ListaP.modificarPaciente(ax.telefonoPaciente);
+			break;
 		}
-	} while (opcion != 4);
-
-
+	} while (opcion != 6);
+	return 0;
 
 }

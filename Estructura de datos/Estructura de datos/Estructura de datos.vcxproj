@@ -130,6 +130,8 @@
     <ClCompile Include="Estructura de datos.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arbol.h" />
+    <ClInclude Include="Usuarios.h" />
     <ClInclude Include="ListasDobles.h" />
     <ClInclude Include="Pacientes.h" />
     <ClInclude Include="resource.h" />
